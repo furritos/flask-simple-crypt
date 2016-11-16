@@ -19,7 +19,7 @@ from Crypto.Protocol.KDF import PBKDF2
 from Crypto.Random.random import getrandbits
 from Crypto.Util import Counter
 import base64
-__version__ = "0.2.3"
+__version__ = "0.2.4"
 __author__ = "Carlos Rivas"
 __license__ = "BSD"
 __copyright__ = "(c) 2016 by Carlos Rivas\n" \
