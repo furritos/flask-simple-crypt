@@ -36,7 +36,7 @@ cipher = SimpleCrypt()
 cipher.init_app(app)
 
 enc_data = cipher.encrypt("shhhhhhh!")
-print enc_data  # returns encrypted data
+print enc_data  # returns base64 encoded and encrypted data
 
 dec_data = cipher.decrypt(enc_data)
 print dec_data  # returns original data
@@ -87,6 +87,8 @@ Notable exceptions from the original implementation are as follows:
 * The password is expanded to two 256 bit keys using PBKDF2 with a 256 bit random salt, SHA256, and 25,000 iterations.
 
 * An encrypted messages starts with a 5 byte header (**fsc** in ASCII followed by two bytes containing version data).
+
+* On top of the above mentioned encryption, the result is then base64 encoded for ease of use with databases.
 
 * Built against Release 4.1 of `simple-crypt`.
 
