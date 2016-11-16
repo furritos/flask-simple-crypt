@@ -19,7 +19,7 @@ from Crypto.Protocol.KDF import PBKDF2
 from Crypto.Random.random import getrandbits
 from Crypto.Util import Counter
 
-__version_info__ = ("0", "2", "0")
+__version_info__ = ("0", "2", "1")
 __version__ = ".".join(__version_info__)
 __author__ = "Carlos Rivas"
 __license__ = "BSD"
