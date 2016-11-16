@@ -16,7 +16,7 @@ with open(module_path) as module:
             version_line = line
             break
 
-__version__ = version_line
+__version__ = eval(version_line.split('__version__ = ')[-1])
 
 setup(
     name='Flask-Simple-Crypt',
