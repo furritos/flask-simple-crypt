@@ -1,21 +1,43 @@
-# from flask_simple_crypt import encrypt, decrypt
+# coding:utf-8
+import binascii
+import os
+import unittest
 
-# output = encrypt("mypwd", "this is mydata")
-# print output
-# outout = decrypt("mypwd", output)
-# print outout
+import flask
 
-from flask import Flask
 from flask_simple_crypt import SimpleCrypt
 
-app = Flask(__name__)
-app.config['SECRET_KEY'] = "this is my key!"
 
-cipher = SimpleCrypt()
-cipher.init_app(app)
+class BasicTestCase(unittest.TestCase):
+    def setUp(self):
+        app = flask.Flask(__name__)
+        app.config['SECRET_KEY'] = binascii.hexlify(os.urandom(24))
+        self.fsc = SimpleCrypt(app)
 
-enc_data = cipher.encrypt("shhhhhhh!")
-print enc_data
+    def test_payload_is_string(self):
+        pw_enc = self.fsc.encrypt('secret')
+        self.assertTrue(isinstance(pw_enc, str))
 
-dec_data = cipher.decrypt(enc_data)
-print dec_data
+    def test_payload_is_not_string(self):
+        with self.assertRaises(TypeError):
+            self.fsc.encrypt(1234)
+
+    def test_encrypt_and_decrypt_match(self):
+        pw_enc = self.fsc.encrypt('secret')
+        pw_dec = self.fsc.decrypt(pw_enc)
+        self.assertEqual(pw_dec, 'secret')
+
+    def test_encrypt_and_decrypt_mismatch(self):
+        pw_enc = self.fsc.encrypt('secret')
+        pw_dec = self.fsc.decrypt(pw_enc)
+        self.assertNotEqual(pw_dec, 'bad_secret')
+
+    def test_empty_secret_key(self):
+        bad_app = flask.Flask(__name__)
+        bad_app.config['SECRET_KEY'] = None
+        with self.assertRaises(RuntimeError):
+            SimpleCrypt(bad_app)
+
+
+if __name__ == '__main__':
+    unittest.main()
