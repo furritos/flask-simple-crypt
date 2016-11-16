@@ -12,11 +12,11 @@ from setuptools import setup
 module_path = os.path.join(os.path.dirname(__file__), 'flask_simple_crypt.py')
 with open(module_path) as module:
     for line in module:
-        if line.startswith('__version_info__'):
+        if line.startswith('__version__'):
             version_line = line
             break
 
-__version__ = '.'.join(eval(version_line.split('__version_info__ = ')[-1]))
+__version__ = version_line
 
 setup(
     name='Flask-Simple-Crypt',
