@@ -18,7 +18,7 @@ from Crypto.Hash import SHA256, HMAC
 from Crypto.Protocol.KDF import PBKDF2
 from Crypto.Random.random import getrandbits
 from Crypto.Util import Counter
-
+import base64
 __version__ = "0.2.3"
 __author__ = "Carlos Rivas"
 __license__ = "BSD"
@@ -60,9 +60,10 @@ class SimpleCrypt(object):
         cipher = AES.new(cipher_key, AES.MODE_CTR, counter=counter)
         encrypted = cipher.encrypt(data)
         hmac = self._hmac(hmac_key, self.HEADER + salt + encrypted)
-        return self.HEADER + salt + encrypted + hmac
+        return base64.b64encode(self.HEADER + salt + encrypted + hmac)
 
-    def decrypt(self, data):
+    def decrypt(self, payload):
+        data = base64.b64decode(payload)
         self._assert_not_unicode(data)
         self._assert_header_prefix(data)
         self._assert_decrypt_length(data)
