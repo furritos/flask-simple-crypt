@@ -76,7 +76,7 @@ Generally, the thinking is that this lapse in processing would deter any would b
 
 To quote the [original](https://github.com/andrewcooke/simple-crypt#speed):
 
-> In simple terms, if an attacker tries to decrypt the data by guessing passwords, then they *also* have to wait for a couple of seconds for each guess.  This deters an attacker from trying "thousands" of different passwords every second.
+> In simple terms, if an attacker tries to decrypt the data by guessing passwords, then they *also* have to wait for a couple of seconds for each guess.  This stops an attacker from trying "thousands" of different passwords every second.
 
 > So the pause on encryption and decryption is actually a sign that the library is protecting you.  If this is unacceptable for your program then you may need to look for a different solution.  I'm sorry, but this is the trade-off I chose when writing simple-crypt.
 
@@ -93,3 +93,7 @@ Notable exceptions from the original implementation are as follows:
 ## Warnings
 
 Heed the [same](https://github.com/andrewcooke/simple-crypt#warnings) as the original.
+
+## Credits
+
+Much of the work has been made possible thanks to [Andrew Cooke's](https://github.com/andrewcooke) original work.  The purpose (and focus) of this project was to `flaskify` it.
