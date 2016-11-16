@@ -1,3 +1,5 @@
+[![build status](https://api.travis-ci.org/furritos/flask-simple-crypt.svg?branch=master)](https://travis-ci.org/furritos/flask-simple-crypt)
+
 # flask-simple-crypt
 
 Flask extension based on `simple-crypt` that allows simple, secure encryption and decryption for Python.  The original module is available in [pypi](http://pypi.python.org/pypi/simple-crypt) and [github](https://github.com/andrewcooke/simple-crypt).
