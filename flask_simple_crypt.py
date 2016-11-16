@@ -46,7 +46,7 @@ class SimpleCrypt(object):
             self.init_app(app)
 
     def init_app(self, app):
-        self.EXPANSION_COUNT = app.config.get('FSC_EXPANSION_COUNT', 10000)
+        self.EXPANSION_COUNT = app.config.get('FSC_EXPANSION_COUNT', 25000)
         key = app.config.get("SECRET_KEY")
         if not key:
             raise RuntimeError("flask-simple-crypt requires the usage of SECRET_KEY")
