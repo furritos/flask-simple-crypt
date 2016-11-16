@@ -13,12 +13,14 @@
 
 """
 
+import base64
+
 from Crypto.Cipher import AES
 from Crypto.Hash import SHA256, HMAC
 from Crypto.Protocol.KDF import PBKDF2
 from Crypto.Random.random import getrandbits
 from Crypto.Util import Counter
-import base64
+
 __version__ = "0.2.5"
 __author__ = "Carlos Rivas"
 __license__ = "BSD"

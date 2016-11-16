@@ -25,6 +25,8 @@ python setup.py install
 
 ### Simple Flask Application
 
+For this extension to work properly, a `SECRET_KEY` must be defined.  It is **strongly** suggested that one use strong key, **especially** when working with sensitive data.
+
 ```
 from flask import Flask
 from flask_simple_crypt import SimpleCrypt
