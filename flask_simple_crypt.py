@@ -23,7 +23,7 @@ from Crypto.Util import Counter
 
 __version__ = "0.2.7"
 __author__ = "Carlos Rivas"
-__license__ = "BSD"
+__license__ = "MIT"
 __copyright__ = "(c) 2016 by Carlos Rivas\n" \
                 "(c) 2012-2015 Andrew Cooke\n" \
                 "(c) 2013 d10n, https://github.com/d10/\n" \
