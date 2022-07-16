@@ -11,13 +11,18 @@ This Flask extension provides two functions, which encrypt and decrypt data, del
  - Flask 2.1.0 or greater
  - PyCryptoDome 3.15.0 or greater
 
-## Installation - GitHub
+## Installation
 
 ```
 git clone https://github.com/furritos/flask-simple-crypt
+python setup.py install
+```
 
+## Cloning
+
+```
+git clone https://github.com/furritos/flask-simple-crypt
 cd flask-simple-crypt
-
 pip install -r requirements.txt
 ```
 
