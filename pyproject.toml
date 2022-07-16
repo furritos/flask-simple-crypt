@@ -1,0 +1,23 @@
+[project]
+name = "Flask-Simple-Crypt"
+version = "0.2.9"
+authors = [
+  { name="Carlos Rivas", email="carlos@riv.as" },
+]
+description = "Flask extension based on simple-crypt that allows simple, secure encryption and decryption for Python."
+readme = "README.md"
+license = { file="LICENSE" }
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Environment :: Web Environment",
+    "Intended Audience :: Developers",
+    "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+    "Topic :: Software Development :: Libraries :: Python Modules"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/furritos/flask-simple-crypt"
+"Bug Tracker" = "https://github.com/furritos/flask-simple-crypt/issues"
