@@ -1,5 +1,3 @@
-[![build status](https://api.travis-ci.org/furritos/flask-simple-crypt.svg?branch=master)](https://travis-ci.org/furritos/flask-simple-crypt)
-
 # Flask-Simple-Crypt
 
 Flask extension based on `simple-crypt` that allows simple, secure encryption and decryption for Python.  The original module is available in [pypi](http://pypi.python.org/pypi/simple-crypt) and [github](https://github.com/andrewcooke/simple-crypt).
@@ -13,7 +11,7 @@ This Flask extension provides two functions, which encrypt and decrypt data, del
  - Flask 2.1.0 or greater
  - PyCryptoDome 3.15.0 or greater
 
-## Installation
+## Installation - GitHub
 
 ```
 git clone https://github.com/furritos/flask-simple-crypt
@@ -40,10 +38,10 @@ cipher = SimpleCrypt()
 cipher.init_app(app)
 
 enc_data = cipher.encrypt("shhhhhhh!")
-print enc_data  # returns base64 encoded and encrypted data
+print(enc_data)  # returns base64 encoded and encrypted data
 
 dec_data = cipher.decrypt(enc_data)
-print dec_data  # returns original data
+print(dec_data)  # returns original data
 ```
 
 ## Performance
