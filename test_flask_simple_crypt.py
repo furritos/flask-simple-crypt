@@ -16,7 +16,7 @@ class BasicTestCase(unittest.TestCase):
 
     def test_payload_is_string(self):
         pw_enc = self.fsc.encrypt('secret')
-        self.assertTrue(isinstance(pw_enc, str))
+        self.assertTrue(isinstance(pw_enc, bytes))
 
     def test_payload_is_not_string(self):
         with self.assertRaises(TypeError):
@@ -25,12 +25,12 @@ class BasicTestCase(unittest.TestCase):
     def test_encrypt_and_decrypt_match(self):
         pw_enc = self.fsc.encrypt('secret')
         pw_dec = self.fsc.decrypt(pw_enc)
-        self.assertEqual(pw_dec, 'secret')
+        self.assertEqual(pw_dec, b'secret')
 
     def test_encrypt_and_decrypt_mismatch(self):
         pw_enc = self.fsc.encrypt('secret')
         pw_dec = self.fsc.decrypt(pw_enc)
-        self.assertNotEqual(pw_dec, 'bad_secret')
+        self.assertNotEqual(pw_dec, b'bad_secret')
 
     def test_empty_secret_key(self):
         bad_app = flask.Flask(__name__)
