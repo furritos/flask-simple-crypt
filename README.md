@@ -8,6 +8,7 @@ This Flask extension provides two functions, which encrypt and decrypt data, del
 
 ## Dependencies
 
+ - Python 3.9 or greater
  - Flask 2.1.0 or greater
  - PyCryptoDome 3.15.0 or greater
 
