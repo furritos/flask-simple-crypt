@@ -5,7 +5,7 @@
     A Flask extension providing simple, secure encryption and decryption for Python.
     Original work and credit goes to Andrew Cooke, https://github.com/andrewcooke/simple-crypt
 
-    :copyright: (c) 2016 by Carlos Rivas, carlos@twobitcoder.com
+    :copyright: (c) 2022 by Carlos, carlos@riv.as
                 (c) 2012-2015 Andrew Cooke, andrew@acooke.org
                 (c) 2013 d10n, https://github.com/d10/ & david@bitinvert.com
 
@@ -21,10 +21,10 @@ from Crypto.Protocol.KDF import PBKDF2
 from Crypto.Random.random import getrandbits
 from Crypto.Util import Counter
 
-__version__ = "0.2.8"
-__author__ = "Carlos Rivas"
+__version__ = "0.2.9"
+__author__ = "Carlos"
 __license__ = "MIT"
-__copyright__ = "(c) 2016 by Carlos Rivas\n" \
+__copyright__ = "(c) 2022 Carlos Rivas\n" \
                 "(c) 2012-2015 Andrew Cooke\n" \
                 "(c) 2013 d10n, https://github.com/d10/\n" \
                 "               david@bitinvert.com"
@@ -47,7 +47,7 @@ class SimpleCrypt(object):
             self.init_app(app)
 
     def init_app(self, app):
-        self.EXPANSION_COUNT = app.config.get('FSC_EXPANSION_COUNT', 25000)
+        self.EXPANSION_COUNT = app.config.get('FSC_EXPANSION_COUNT', 10240)
         self.FSC_KEY = app.config.get("SECRET_KEY")
         if not self.FSC_KEY:
             raise RuntimeError("flask-simple-crypt requires the usage of SECRET_KEY")
