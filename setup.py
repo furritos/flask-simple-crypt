@@ -29,7 +29,7 @@ setup(
     py_modules=['flask_simple_crypt'],
     zip_safe=False,
     platforms='any',
-    install_requires=['Flask', 'pycrypto'],
+    install_requires=['Flask', 'pycryptodome'],
     classifiers=[
         'Environment :: Web Environment',
         'Intended Audience :: Developers',
