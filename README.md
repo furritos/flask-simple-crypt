@@ -10,8 +10,8 @@ This Flask extension provides two functions, which encrypt and decrypt data, del
 
 ## Dependencies
 
- - Flask 0.11.1 or greater
- - PyCrypto 2.6.1 or greater
+ - Flask 2.1.0 or greater
+ - PyCryptoDome 3.15.0 or greater
 
 ## Installation
 
@@ -20,7 +20,7 @@ git clone https://github.com/furritos/flask-simple-crypt
 
 cd flask-simple-crypt
 
-python setup.py install
+pip install -r requirements.txt
 ```
 
 ## Usage 
@@ -60,7 +60,7 @@ import time
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "this is my key!"
-app.config['FSC_EXPANSION_COUNT'] = 2000
+app.config['FSC_EXPANSION_COUNT'] = 2048
 
 cipher = SimpleCrypt()
 cipher.init_app(app)
