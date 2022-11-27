@@ -21,7 +21,7 @@ from Crypto.Protocol.KDF import PBKDF2
 from Crypto.Random.random import getrandbits
 from Crypto.Util import Counter
 
-__version__ = "0.2.9"
+__version__ = "0.3.1"
 __author__ = "Carlos"
 __license__ = "MIT"
 __copyright__ = "(c) 2022 Carlos Rivas\n" \
