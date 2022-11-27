@@ -1,6 +1,6 @@
 [project]
 name = "Flask-Simple-Crypt"
-version = "0.2.9"
+version = "0.3.1"
 authors = [
   { name="Carlos Rivas", email="carlos@riv.as" },
 ]

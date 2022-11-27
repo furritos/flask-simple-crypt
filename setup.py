@@ -24,7 +24,7 @@ setup(
     url='https://github.com/furritos/flask-simple-crypt',
     license='MIT',
     author='Carlos Rivas',
-    author_email='carlos@twobitcoder.com',
+    author_email='carlos@riv.as',
     description='Simple Crypt helper for encrypting/decrypting data in Flask.',
     py_modules=['flask_simple_crypt'],
     zip_safe=False,
